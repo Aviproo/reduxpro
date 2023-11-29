@@ -9,7 +9,16 @@ const counterReudcer = (state = { counter: 0 }, action) => {
       counter: state.counter - 1,
     };
   }
-
+  if (action.type === "incrementBy") {
+    return {
+      counter: state.counter + 5,
+    };
+  }
+  if (action.type === "decrementBy") {
+    return {
+      counter: state.counter - 5,
+    };
+  }
   return state;
 };
 
